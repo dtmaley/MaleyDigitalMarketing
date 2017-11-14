@@ -39,6 +39,7 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="Models\ContentTypes\" />
     <Folder Include="wwwroot\img\" />
   </ItemGroup>
 

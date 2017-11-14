@@ -3,13 +3,14 @@ import { Http, Headers } from "@angular/http";
 import { ErrorService } from "./error.service";
 import { ToasterService } from "angular2-toaster";
 
-import { Profile } from "../classes/profile";
+
 
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class ProfileService {
 
+/*TODO Remove
     private profileUrl = "api/Profile"
     private headers = new Headers({ 'Content-Type': 'application/json' });
 
@@ -30,4 +31,5 @@ export class ProfileService {
             .then(response => response.json() as Profile)
             .catch(error => this.errorService.handleError(error));
     }
+*/
 }

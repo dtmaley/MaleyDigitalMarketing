@@ -8,9 +8,9 @@ using KenticoCloud.Delivery;
 using KenticoCloudBase.Services;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
-using KenticoCloudBase.Models;
 using KenticoCloudBase.Resolvers;
 using KenticoCloudBase.Configurations;
+using KenticoCloudBase.Models;
 
 namespace KenticoCloudBase
 {
@@ -36,9 +36,6 @@ namespace KenticoCloudBase
         {
             // Adds services required for using options.
             services.AddOptions();
-
-            // IP Security settings
-            services.Configure<IpSecuritySettings>(Configuration.GetSection("IpSecuritySettings"));
 
             // Register the IConfiguration instance which ProjectOptions binds against.
             services.Configure<ProjectOptions>(Configuration);
@@ -77,9 +74,6 @@ namespace KenticoCloudBase
                 // Display friendly error pages for any 
                 // non-success case (status code is >= 400 and < 600)
                 app.UseStatusCodePagesWithReExecute("/Error/{0}");
-
-                // IP Validation Middleware
-                // app.UseMiddleware<IpRestrictionMiddleware>();
             }
 
             app.UseStaticFiles();

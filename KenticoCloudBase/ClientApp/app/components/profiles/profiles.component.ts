@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { ProfileService } from "../../services/profile.service";
 
-import { Profile } from "../../classes/profile";
 import { TaxonomyTerm } from "../../classes/taxonomyTerm";
 
 
@@ -14,6 +13,7 @@ import { TaxonomyTerm } from "../../classes/taxonomyTerm";
 
 export class ProfilesComponent implements OnInit {
 
+    /*
     profiles: Profile[];
     allProfiles: Profile[];
     status: TaxonomyTerm[] = [];
@@ -32,9 +32,13 @@ export class ProfilesComponent implements OnInit {
     certificationsAndProfessionalMembershipsFilter: string;
     methadologiesFilter: string;
 
+    */
+
     constructor(private profileService: ProfileService) { };
 
     ngOnInit() {
+
+        /*
         // Get all profiles
         this.profileService.getProfiles().then(associateProfiles => {
 
@@ -51,8 +55,10 @@ export class ProfilesComponent implements OnInit {
 
             this.profiles = this.allProfiles = associateProfiles;
         });
+        */
     }
 
+    /*
     // Adds items to the filter if they do not already exist
     buildFilter(filterName: TaxonomyTerm[], item: TaxonomyTerm) {
         if (!filterName.some(f => f.codename == item.codename)) {
@@ -86,5 +92,5 @@ export class ProfilesComponent implements OnInit {
         if (this.methadologiesFilter && this.methadologiesFilter != 'undefined') {
             this.profiles = this.profiles.filter(p => p.methodologies.find(c => c.codename == this.methadologiesFilter) != undefined);
         }
-    }
+    }*/
 }

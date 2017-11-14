@@ -1,21 +1,21 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using KenticoCloud.Delivery;
-using KenticoCloudBase.Models;
 using System;
 
 namespace KenticoCloudBase.Controllers
 {
     [Route("api/[controller]")]
-    public class ProfileController : BaseController
+    public class ContentController : BaseController
     {
-        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(ProfileController));
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(typeof(ContentController));
 
-        public ProfileController(IDeliveryClient deliveryClient) : base(deliveryClient)
+        public ContentController(IDeliveryClient deliveryClient) : base(deliveryClient)
         {
 
         }
 
+        /* TODO Remove
         [HttpGet("[action]")]
         public async Task<IActionResult> GetList()
         {
@@ -49,5 +49,6 @@ namespace KenticoCloudBase.Controllers
                 throw;
             }
         }
+        */
     }
 }

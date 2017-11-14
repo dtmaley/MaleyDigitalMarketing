@@ -9,13 +9,17 @@ namespace KenticoCloudBase.Models
         {
             switch (contentType)
             {
+                /*TODO Remove
                 case "associate_profile":
                     return typeof(AssociateProfile);
                 case "associate_profile_experience":
                     return typeof(AssociateProfileExperience);
                 default:
                     return null;
+                 */
             }
+
+            return null;
         }
     }
 }
