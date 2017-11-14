@@ -1,0 +1,166 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p *ngIf="!profile"><em>Loading...</em></p>
+        </div>
+    </div>
+
+    <div *ngIf="profile">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="profile-header">
+                    <div class="row">
+                        <div class="header-text col-md-7">
+                            <h2>
+                                <span class="profile-header-primary">{{ profile.associateName }} -</span>
+                                <span class="profile-header-secondary">{{ profile.associateTitle }}</span>
+                            </h2>
+                            <h6>
+                                <span class="profile-header-primary">{{ profile.credentials }}</span>
+                            </h6>
+                        </div>
+                        <div class="skyline-logo d-none d-md-block col-md-4">
+                            <img class="centered-item" src="/img/skyline-technologies.png" />
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="profile-section-header">
+                    Associate Summary
+                </h3>
+
+                <div [innerHTML]="profile.associateSummary"></div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div *ngIf="profile.developmentExperience.length > 0">
+                    <h3 class="profile-section-header">Development Experience</h3>
+                    <ul>
+                        <li *ngFor="let experience of profile.developmentExperience">
+                            {{ experience.name }}
+                        </li>
+                    </ul>
+                </div>
+                <div *ngIf="profile.methodologies.length > 0">
+                    <h3 class="profile-section-header">Methodologies</h3>
+                    <ul>
+                        <li *ngFor="let methodology of profile.methodologies">
+                            {{ methodology.name }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div *ngIf="profile.functionalBusinessExperience.length > 0">
+                    <h3 class="profile-section-header">Functional Business Experience</h3>
+                    <ul>
+                        <li *ngFor="let experience of profile.functionalBusinessExperience">
+                            {{ experience.name }}
+                        </li>
+                    </ul>
+                </div>
+                <div *ngIf="profile.industriesServed.length > 0">
+                    <h3 class="profile-section-header">Industries Served</h3>
+                    <ul>
+                        <li *ngFor="let industry of profile.industriesServed">
+                            {{ industry.name }}
+                        </li>
+                    </ul>
+                </div>
+                <div *ngIf="profile.additionalTechnicalExperience.indexOf('<li>') > 1">
+                    <h3 class="profile-section-header">Additional Technical Experience</h3>
+                    <div [innerHTML]="profile.additionalTechnicalExperience"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="profile-section-header">Client Feedback</h3>
+                <div [innerHTML]="profile.clientFeedback"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="profile-section-header">Results</h3>
+                <div [innerHTML]="profile.results"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="profile-section-header">Experiences</h3>
+                <div *ngFor="let experience of profile.associateExperiences">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div>
+                                <strong> {{ experience.industry }} </strong>
+                            </div>
+                            <div>
+                                <strong>Dates:</strong>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div>
+                                <strong>{{ experience.role }}</strong>
+                            </div>
+                            <div>
+                                <strong> {{ experience.startDate | date:"MM/yyyy" }} - {{ (experience.endDate | date:"MM/yyyy") || "Present" }} </strong>
+                            </div>
+                        </div>
+                    </div>
+                    <p><i>{{ experience.product }}</i></p>
+                    <div [innerHTML]="experience.details"></div>
+                    <HR />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="profile-section-header">Education</h3>
+                <div [innerHTML]="profile.education"></div>
+            </div>
+        </div>
+        <div *ngIf="profile.communityInvolvement.indexOf('<li>') > 1" class="row">
+            <div class="col-md-12">
+                <h3 class="profile-section-header">Community Involvement</h3>
+                <div [innerHTML]="profile.communityInvolvement"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div *ngIf="profile.certificationsAndProfessionalMemberships.length > 0">
+                    <h3 class="profile-section-header">Certifications & Professional Memberships</h3>
+                    <ul>
+                        <li *ngFor="let cert of profile.certificationsAndProfessionalMemberships">
+                            {{ cert.name }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div *ngIf="profile.technicalAndBusinessSkills.length > 0">
+                    <h3 class="profile-section-header">Complete Technical and Business Skill Background</h3>
+                    <div class="row skill-table">
+                        <div *ngFor="let skill of profile.technicalAndBusinessSkills" class="col-md-6 bordered">
+                            <span>{{ skill.name }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row footer-buttons">
+            <div class="col-md-12">
+                <a [routerLink]="['/profiles']" class="btn btn-outline-secondary">
+                    Back to Profiles
+                </a>
+                <a *ngIf="profile.completeAssociateProfile.length > 0" class="btn btn-outline-primary float-right" href="{{ profile.completeAssociateProfile[0].url }}">Download Profile</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+

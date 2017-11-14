@@ -1,0 +1,98 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p *ngIf="!profiles"><em>Loading...</em></p>
+        </div>
+    </div>
+
+    <div *ngIf="profiles">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="filters">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Status</label>
+                                <select class="form-control" [(ngModel)]="statusFilter">
+                                    <option [value]="undefined">(All)</option>
+                                    <option *ngFor="let key of status" [value]="key.codename">{{key.name}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Development Experience</label>
+                                <select class="form-control" [(ngModel)]="developmentExperienceFilter">
+                                    <option [value]="undefined">(All)</option>
+                                    <option *ngFor="let key of developmentExperience" [value]="key.codename">{{key.name}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Functional Business Experience</label>
+                                <select class="form-control" [(ngModel)]="functionalBusinessExperienceFilter">
+                                    <option [value]="undefined">(All)</option>
+                                    <option *ngFor="let key of functionalBusinessExperience" [value]="key.codename">{{key.name}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Industries Served</label>
+                                <select class="form-control" [(ngModel)]="industriesServedFilter">
+                                    <option [value]="undefined">(All)</option>
+                                    <option *ngFor="let key of industriesServed" [value]="key.codename">{{key.name}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Technical and Business Skills</label>
+                                <select class="form-control" [(ngModel)]="technicalAndBusinessSkillsFilter">
+                                    <option [value]="undefined">(All)</option>
+                                    <option *ngFor="let key of technicalAndBusinessSkills" [value]="key.codename">{{key.name}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Certifications and Professional Memberships</label>
+                                <select class="form-control" [(ngModel)]="certificationsAndProfessionalMembershipsFilter">
+                                    <option [value]="undefined">(All)</option>
+                                    <option *ngFor="let key of certificationsAndProfessionalMemberships" [value]="key.codename">{{key.name}}</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Methadologies</label>
+                                <select class="form-control" [(ngModel)]="methadologiesFilter">
+                                    <option [value]="undefined">(All)</option>
+                                    <option *ngFor="let key of methadologies" [value]="key.codename">{{key.name}}</option>
+                                </select>
+                            </div>
+                            <div class="float-right">
+                                <button class="btn btn-outline-primary btn-small" (click)="filter()">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table *ngIf="profiles.length > 0 else NoResults" class='table table-striped'>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Title</th>
+                    <th>Status</th>
+                    <th class="align-right">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let profile of profiles">
+                    <td>{{ profile.associateName }}</td>
+                    <td>{{ profile.associateTitle }}</td>
+                    <td>{{ profile.associateStatus[0].name }}</td>
+                    <td class="align-right">
+                        <a [routerLink]="['/profile-detail/', profile.system.codename]" class="btn btn-outline-primary btn-sm">
+                            View Profile
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <ng-template #NoResults><em>No results match your search...</em></ng-template>
+    </div>
+</div>
+
