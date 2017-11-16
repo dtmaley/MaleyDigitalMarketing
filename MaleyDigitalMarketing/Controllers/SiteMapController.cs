@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using SimpleMvcSitemap;
 
-namespace KenticoCloudBase.Controllers
+namespace MDM.Controllers
 {
     public class SiteMapController 
     {

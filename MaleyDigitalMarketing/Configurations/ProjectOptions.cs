@@ -1,4 +1,4 @@
-namespace KenticoCloudBase.Configurations
+namespace MDM.Configurations
 {
     public class ProjectOptions
     {

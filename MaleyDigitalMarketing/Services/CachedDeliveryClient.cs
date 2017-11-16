@@ -7,9 +7,9 @@ using KenticoCloud.Delivery.InlineContentItems;
 using Newtonsoft.Json.Linq;
 using Microsoft.Extensions.Options;
 using Microsoft.Extensions.Caching.Memory;
-using KenticoCloudBase.Configurations;
+using MDM.Configurations;
 
-namespace KenticoCloudBase.Services
+namespace MDM.Services
 {
     public class CachedDeliveryClient : IDeliveryClient, IDisposable
     {

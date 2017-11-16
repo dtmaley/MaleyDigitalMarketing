@@ -4,7 +4,7 @@ using System.IO;
 using System.Reflection;
 using System.Xml;
 
-namespace KenticoCloudBase
+namespace MDM
 {
     public class Program
     {

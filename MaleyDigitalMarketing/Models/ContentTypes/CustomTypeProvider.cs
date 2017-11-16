@@ -1,7 +1,7 @@
 using System;
 using KenticoCloud.Delivery;
 
-namespace KenticoCloudBase.Models
+namespace MDM.Models
 {
     public class CustomTypeProvider : ICodeFirstTypeProvider
     {

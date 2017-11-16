@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using KenticoCloud.Delivery;
 using System;
 
-namespace KenticoCloudBase.Controllers
+namespace MDM.Controllers
 {
     [Route("api/[controller]")]
     public class ContentController : BaseController

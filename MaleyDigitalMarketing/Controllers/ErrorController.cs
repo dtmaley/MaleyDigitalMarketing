@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace KenticoCloudBase.Controllers
+namespace MDM.Controllers
 {
     public class ErrorController : Controller
     {

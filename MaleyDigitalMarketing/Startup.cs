@@ -5,14 +5,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using KenticoCloud.Delivery;
-using KenticoCloudBase.Services;
+using MDM.Services;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
-using KenticoCloudBase.Resolvers;
-using KenticoCloudBase.Configurations;
-using KenticoCloudBase.Models;
+using MDM.Resolvers;
+using MDM.Configurations;
+using MDM.Models;
 
-namespace KenticoCloudBase
+namespace MDM
 {
     public class Startup
     {

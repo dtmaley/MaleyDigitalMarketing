@@ -1,6 +1,6 @@
-﻿using KenticoCloud.Delivery;
+using KenticoCloud.Delivery;
 
-namespace KenticoCloudBase.Resolvers
+namespace MDM.Resolvers
 {
     /// <summary>
     /// Sample implementation to resolve links to other content items in Rich Text

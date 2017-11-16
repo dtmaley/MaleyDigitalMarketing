@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.13
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KenticoCloudBase", "KenticoCloudBase\KenticoCloudBase.csproj", "{7713EB40-5A7C-4EDE-9071-34465312A2E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaleyDigitalMarketing", "MaleyDigitalMarketing\MaleyDigitalMarketing.csproj", "{7713EB40-5A7C-4EDE-9071-34465312A2E2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {078470CE-3C3E-4499-AA30-0849BCFC13E4}
 	EndGlobalSection
 EndGlobal
