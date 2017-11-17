@@ -1,17 +1,10 @@
-/*Stylesheet shared across components*/
-.content {
-    padding-top:5rem;
-}
 
-.centered-item {
-    display: block;
-    margin: auto;
-}
-
-.top-margin {
-    margin-top: 1em;
-}
-
-.align-right {
-    text-align: right;
-}
+// Freelancer SCSS Files
+@import "freelancer/variables.scss";
+@import "freelancer/mixins.scss";
+@import "freelancer/global.scss";
+@import "freelancer/navbar.scss";
+@import "freelancer/masthead.scss";
+@import "freelancer/portfolio.scss";
+@import "freelancer/contact.scss";
+@import "freelancer/bootstrap-overrides.scss";
