@@ -1,9 +1,10 @@
+using KenticoCloud.Delivery;
+
 namespace MDM.Configurations
 {
     public class ProjectOptions
     {
-        public string KenticoCloudProjectId { get; set; }
-        public string KenticoCloudPreviewApiKey { get; set; }
+        public DeliveryOptions DeliveryOptions { get; set; }
         public int CacheTimeoutSeconds { get; set; }
     }
 }
