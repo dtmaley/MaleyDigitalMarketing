@@ -1,5 +1,5 @@
 {
-  "name": "MaleyDigitalMarketing",
+  "name": "maleydigitalmarketing",
   "version": "0.0.0",
   "scripts": {
     "test": "karma start ClientApp/test/karma.conf.js",
@@ -51,7 +51,8 @@
     "webpack": "2.5.1",
     "webpack-hot-middleware": "2.18.0",
     "webpack-merge": "4.1.0",
-    "zone.js": "0.8.10"
+    "zone.js": "0.8.10",
+    "font-awesome": "4.7.0"
   },
   "devDependencies": {
     "@angular/cli": "1.0.3",

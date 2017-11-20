@@ -28,6 +28,7 @@ module.exports = (env) => {
                 'angular2-toaster/toaster.css',
                 'bootstrap',
                 'bootstrap/dist/css/bootstrap.css',
+                'font-awesome/css/font-awesome.css',
                 'core-js',
                 'es6-shim',
                 'event-source-polyfill',
