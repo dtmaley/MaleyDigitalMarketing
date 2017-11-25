@@ -1,7 +1,7 @@
 using KenticoCloud.Delivery;
 using Microsoft.AspNetCore.Mvc;
 
-namespace MDM.Controllers
+namespace MDM.API
 {
     public class BaseController : Controller
     {

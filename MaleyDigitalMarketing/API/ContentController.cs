@@ -2,8 +2,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using KenticoCloud.Delivery;
 using System;
+using MDM.Models;
 
-namespace MDM.Controllers
+namespace MDM.API
 {
     [Route("api/[controller]")]
     public class ContentController : BaseController
@@ -15,17 +16,19 @@ namespace MDM.Controllers
 
         }
 
-        /* TODO Remove
+        /// <summary>
+        /// Get the Homepage Content Item for Displaying Items on Home Page
+        /// </summary>
+        /// <param name="codeName"></param>
+        /// <returns></returns>
         [HttpGet("[action]")]
-        public async Task<IActionResult> GetList()
+        public async Task<IActionResult> GetHomePageContent(string codename)
         {
             try
             {
-                DeliveryItemListingResponse<AssociateProfile> result = await DeliveryClient.GetItemsAsync<AssociateProfile>(
-                     new EqualsFilter("system.type", "associate_profile")
-                 );
+                DeliveryItemResponse<HomePage> result = await DeliveryClient.GetItemAsync<HomePage>(codename);
 
-                return Ok(result.Items);
+                return Ok(result.Item);
             }
             catch (Exception ex)
             {
@@ -33,22 +36,5 @@ namespace MDM.Controllers
                 throw;
             }
         }
-
-        [HttpGet("[action]")]
-        public async Task<IActionResult> Get(string codeName)
-        {
-            try
-            {
-                DeliveryItemResponse<AssociateProfile> result = await DeliveryClient.GetItemAsync<AssociateProfile>(codeName);
-
-               return Ok(result.Item);
-            }
-            catch (Exception ex)
-            {
-                log.Error(ex.Message, ex);
-                throw;
-            }
-        }
-        */
     }
 }

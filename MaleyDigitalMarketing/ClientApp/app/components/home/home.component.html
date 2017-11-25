@@ -1,13 +1,19 @@
-<header class="masthead">
+<div class="row">
+    <div class="col-md-12">
+        <p *ngIf="!homeContent"><em>Loading...</em></p>
+    </div>
+</div>
+
+<header class="masthead" *ngIf="homeContent">
     <div class="container">
         <!-- TODO Image Should Come From Kentico Cloud-->
-        <img class="img-fluid" src="/img/profile.png" alt="Software Engineer">
+        <img class="img-fluid" src="{{ homeContent.heroImage[0].url }}" alt="{{ homeContent.heroImage[0].description }}">
         <div class="intro-text">
             <span class="name">Maley Digital Marketing</span>
             <hr class="star-light">
 
             <!--TODO Move Skills Into Kentico Cloud-->
-            <span class="skills">Kentico - Search Engine Optimization - Digital Marketing</span>
+            <span class="skills">{{ homeContent.heroSkill1 }} - {{ homeContent.heroSkill2 }} - {{ homeContent.heroSkill3 }}</span>
         </div>
     </div>
 </header>

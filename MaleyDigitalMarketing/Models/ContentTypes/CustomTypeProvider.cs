@@ -9,17 +9,11 @@ namespace MDM.Models
         {
             switch (contentType)
             {
-                /*TODO Remove
-                case "associate_profile":
-                    return typeof(AssociateProfile);
-                case "associate_profile_experience":
-                    return typeof(AssociateProfileExperience);
+                case "home_page":
+                    return typeof(HomePage);
                 default:
                     return null;
-                 */
             }
-
-            return null;
         }
     }
 }

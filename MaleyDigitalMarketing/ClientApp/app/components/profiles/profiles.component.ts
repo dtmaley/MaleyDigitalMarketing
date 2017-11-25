@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ProfileService } from "../../services/profile.service";
+//import { ProfileService } from "../../services/profile.service";
 
 import { TaxonomyTerm } from "../../classes/taxonomyTerm";
 
@@ -34,7 +34,7 @@ export class ProfilesComponent implements OnInit {
 
     */
 
-    constructor(private profileService: ProfileService) { };
+    constructor() { };
 
     ngOnInit() {
 

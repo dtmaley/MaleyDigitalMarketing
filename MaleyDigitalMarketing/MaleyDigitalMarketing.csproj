@@ -27,6 +27,7 @@
   
   <ItemGroup>
     <!-- Files not to show in IDE -->
+    <None Remove="ClientApp\app\classes\homePage.ts" />
     <None Remove="yarn.lock" />
     <Compile Remove="Logs\**" />
  
@@ -45,6 +46,10 @@
 
   <ItemGroup>
     <Content Include="IISUrlRewrite.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\classes\homePage.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

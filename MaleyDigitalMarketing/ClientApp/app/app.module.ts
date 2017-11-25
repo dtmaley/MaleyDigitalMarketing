@@ -6,7 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 
 import { ErrorService } from "./services/error.service";
 import { ToasterModule, ToasterService } from 'angular2-toaster';
-import { ProfileService } from "./services/profile.service";
+import { ContentService } from "./services/content.service";
 
 import 'bootstrap';
 
@@ -34,7 +34,7 @@ import { NavMenuComponent } from "./components/navmenu/navmenu.component";
         { provide: 'ORIGIN_URL', useValue: location.origin },
         ToasterService,
         ErrorService,
-        ProfileService
+        ContentService
     ]
 })
 export class AppModule {
