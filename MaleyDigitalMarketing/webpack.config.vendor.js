@@ -29,6 +29,7 @@ module.exports = (env) => {
                 'bootstrap',
                 'bootstrap/dist/css/bootstrap.css',
                 'font-awesome/css/font-awesome.css',
+                'startbootstrap-freelancer/css/freelancer.css',
                 'core-js',
                 'es6-shim',
                 'event-source-polyfill',
@@ -72,7 +73,6 @@ module.exports = (env) => {
             new webpack.optimize.UglifyJsPlugin()
         ])
     });
-    return [clientBundleConfig];
 
     return [clientBundleConfig];
 }
