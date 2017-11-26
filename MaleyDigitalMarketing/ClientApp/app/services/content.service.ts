@@ -4,8 +4,10 @@ import { ErrorService } from "./error.service";
 import { ToasterService } from "angular2-toaster";
 
 import { HomePage } from "../classes/homePage";
+import { NavigationItem } from "../classes/navigationItem";
 
 import 'rxjs/add/operator/toPromise';
+
 
 @Injectable()
 export class ContentService {
@@ -23,19 +25,11 @@ export class ContentService {
             .catch(error => this.errorService.handleError(error));
     }
 
-
-    /*TODO Remove
-        private profileUrl = "api/Profile"
-        private headers = new Headers({ 'Content-Type': 'application/json' });
-    
-        constructor(private http: Http, private errorService: ErrorService, private toasterService: ToasterService) { }
-    
-        getProfiles(): Promise<Profile[]> {
-            const url = `${this.profileUrl}/GetList`;
-            return this.http.get(url)
-                .toPromise()
-                .then(response => response.json() as Profile[])
-                .catch(error => this.errorService.handleError(error));
-        }
-    */
+    getNavigationItems(): Promise<NavigationItem[]> {
+        const url = `${this.contentUrl}/GetNavigationItems`;
+        return this.http.get(url)
+            .toPromise()
+            .then(response => response.json() as NavigationItem[])
+            .catch(error => this.errorService.handleError(error));
+    }
 }

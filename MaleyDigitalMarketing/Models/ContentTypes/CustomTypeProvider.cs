@@ -11,6 +11,8 @@ namespace MDM.Models
             {
                 case "home_page":
                     return typeof(HomePage);
+                case "navigation":
+                    return typeof(Navigation);
                 default:
                     return null;
             }

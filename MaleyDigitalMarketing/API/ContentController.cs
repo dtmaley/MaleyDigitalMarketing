@@ -36,5 +36,29 @@ namespace MDM.API
                 throw;
             }
         }
+
+        /// <summary>
+        /// Get the Navigation Items for Display in the Nav
+        /// </summary>
+        /// <param name="codeName"></param>
+        /// <returns></returns>
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetNavigationItems()
+        {
+            try
+            {
+                DeliveryItemListingResponse<Navigation> result = await DeliveryClient.GetItemsAsync<Navigation>(
+                    new EqualsFilter("system.type", "navigation"),
+                    new OrderParameter("elements.sort_order")
+                    );
+
+                return Ok(result.Items);
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.Message, ex);
+                throw;
+            }
+        }
     }
 }
