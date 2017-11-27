@@ -1,6 +1,6 @@
 <span *ngIf="!homeContent">Loading...</span>
 
-<!--Hero Section -->
+<!-- Hero Section -->
 <header class="masthead" *ngIf="homeContent">
     <div class="container">
         <img class="img-fluid" src="{{ homeContent.heroImage[0].url }}" alt="{{ homeContent.heroImage[0].description }}">
@@ -12,18 +12,28 @@
     </div>
 </header>
 
-<!-- Clean this Up -->
 
 <!-- Blog Section -->
-<section id="blog">
+<section id="blog" *ngIf="homeContent">
     <div class="container">
-        <h2 class="text-center">Portfolio</h2>
+        <h2 class="text-center">{{ homeContent.blogSectionHeaderText }}</h2>
         <hr class="star-primary">
-        <div class="row">
-            <div class="col-sm-4 portfolio-item">
-                <a class="portfolio-link" href="#portfolioModal1" data-toggle="modal">
-                    <!--<img class="img-fluid" src="img/portfolio/cabin.png" alt="">-->
-                </a>
+
+        <!-- LEFT OFF HERE NEED BETTER HEADLESS CMS IMAGE -->
+        <div class="row card-section">
+            <div class="col-md-6" *ngFor="let card of homeContent.blogCards">
+                <div class="card-square">
+                    <div class="img-wrapper inner-border-white">
+                        <img class="image-square" src="{{ card.cardImage[0].url }}" alt="{{ card.cardImage[0].description }}">
+                    </div>
+                    <div class="text-wrapper">
+                        <h3>{{ card.blogName}}</h3>
+
+                        <hr>
+                        <p>{{ card.blogShortDescription }}</p>
+                        <a href="http://training.iddba.org/module/hand-washing-personal-hygiene" target="_blank">Watch VIDEO<span class="glyphicon glyphicon-menu-right">&nbsp;</span></a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

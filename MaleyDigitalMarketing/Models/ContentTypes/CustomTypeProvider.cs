@@ -9,6 +9,8 @@ namespace MDM.Models
         {
             switch (contentType)
             {
+                case "blog_card":
+                    return typeof(BlogCard);
                 case "home_page":
                     return typeof(HomePage);
                 case "navigation":

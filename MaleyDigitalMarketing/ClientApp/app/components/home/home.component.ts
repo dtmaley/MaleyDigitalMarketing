@@ -6,7 +6,7 @@ import { HomePage } from "../../classes/homePage";
 @Component({
     selector: 'home',
     templateUrl: './home.component.html',
-    styleUrls: ['../../scss/master.scss']
+    styleUrls: ['../../scss/master.scss', './home.scss' ]
 })
 export class HomeComponent implements OnInit {
 
