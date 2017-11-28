@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "f44e25c89ce938cb971c"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "5b873ff27a0bf2308bec"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -8202,11 +8202,11 @@ var NavMenuComponent = (function () {
         this.contentService = contentService;
         window.onscroll = function () {
             zone.run(function () {
-                if (window.pageYOffset > 0) {
+                if (window.pageYOffset > 100) {
                     _this.navClass = "navbar-shrink";
                 }
                 else {
-                    _this.navClass = "navbar-grow";
+                    _this.navClass = "";
                 }
             });
         };

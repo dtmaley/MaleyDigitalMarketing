@@ -17,7 +17,7 @@ export class NavMenuComponent implements OnInit {
     constructor(private contentService: ContentService, zone: NgZone) {
         window.onscroll = () => {
             zone.run(() => {
-                if (window.pageYOffset > 0) {
+                if (window.pageYOffset > 100) {
                     this.navClass = "navbar-shrink"
                 } else {
                     this.navClass = "";
