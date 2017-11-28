@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "385fef68b608e28f569e"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "f44e25c89ce938cb971c"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -8197,8 +8197,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(1);
 var content_service_1 = __webpack_require__(35);
 var NavMenuComponent = (function () {
-    function NavMenuComponent(contentService) {
+    function NavMenuComponent(contentService, zone) {
+        var _this = this;
         this.contentService = contentService;
+        window.onscroll = function () {
+            zone.run(function () {
+                if (window.pageYOffset > 0) {
+                    _this.navClass = "navbar-shrink";
+                }
+                else {
+                    _this.navClass = "navbar-grow";
+                }
+            });
+        };
     }
     NavMenuComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -8212,7 +8223,7 @@ NavMenuComponent = __decorate([
         template: __webpack_require__(134),
         styles: [__webpack_require__(36)]
     }),
-    __metadata("design:paramtypes", [content_service_1.ContentService])
+    __metadata("design:paramtypes", [content_service_1.ContentService, core_1.NgZone])
 ], NavMenuComponent);
 exports.NavMenuComponent = NavMenuComponent;
 
@@ -8837,13 +8848,13 @@ module.exports = "<!--Toaster Messages-->\r\n<toaster-container></toaster-contai
 /* 133 */
 /***/ (function(module, exports) {
 
-module.exports = "<span *ngIf=\"!homeContent\">Loading...</span>\r\n\r\n<!-- Hero Section -->\r\n<header class=\"masthead\" *ngIf=\"homeContent\">\r\n    <div class=\"container\">\r\n        <img class=\"img-fluid\" src=\"{{ homeContent.heroImage[0].url }}\" alt=\"{{ homeContent.heroImage[0].description }}\">\r\n        <div class=\"intro-text\">\r\n            <span class=\"name\">Maley Digital Marketing</span>\r\n            <hr class=\"star-light\">\r\n            <span class=\"skills\">{{ homeContent.heroSkill1 }} - {{ homeContent.heroSkill2 }} - {{ homeContent.heroSkill3 }}</span>\r\n        </div>\r\n    </div>\r\n</header>\r\n\r\n\r\n<!-- Resource Section -->\r\n<section id=\"blog\" *ngIf=\"homeContent\">\r\n    <div class=\"container\">\r\n        <h2 class=\"text-center\">{{ homeContent.resourceSectionHeaderText }}</h2>\r\n        <hr class=\"star-primary\">\r\n\r\n        <div class=\"row card-section\">\r\n            <div class=\"col-lg-4 col-md-6 col-sm-12\" *ngFor=\"let card of homeContent.resourceCards\">\r\n                <div class=\"card-square\">\r\n                    <div class=\"img-wrapper inner-border-white\">\r\n                        <img class=\"image-square\" src=\"{{ card.cardImage[0].url }}\" alt=\"{{ card.cardImage[0].description }}\">\r\n                    </div>\r\n                    <div class=\"text-wrapper\">\r\n                        <h4>{{ card.resourceName}}</h4>\r\n                        <hr>\r\n                        <p>{{ card.resourceShortDescription }}</p>\r\n                        <a href=\"http://training.iddba.org/module/hand-washing-personal-hygiene\" target=\"_blank\">Watch VIDEO<span class=\"glyphicon glyphicon-menu-right\">&nbsp;</span></a>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section>\r\n";
+module.exports = "<span *ngIf=\"!homeContent\">Loading...</span>\r\n\r\n<!-- Hero Section -->\r\n<header class=\"masthead\" *ngIf=\"homeContent\">\r\n    <div class=\"container\">\r\n        <img class=\"img-fluid\" src=\"{{ homeContent.heroImage[0].url }}\" alt=\"{{ homeContent.heroImage[0].description }}\">\r\n        <div class=\"intro-text\">\r\n            <span class=\"name\">Maley Digital Marketing</span>\r\n            <hr class=\"star-light\">\r\n            <span class=\"skills\">{{ homeContent.heroSkill1 }} - {{ homeContent.heroSkill2 }} - {{ homeContent.heroSkill3 }}</span>\r\n        </div>\r\n    </div>\r\n</header>\r\n\r\n\r\n<!-- Resource Section -->\r\n<section id=\"blog\" *ngIf=\"homeContent\">\r\n    <div class=\"container\">\r\n        <h2 class=\"text-center\">{{ homeContent.resourceSectionHeaderText }}</h2>\r\n        <hr class=\"star-primary\">\r\n\r\n        <div class=\"row card-section\">\r\n            <div class=\"col-lg-4 col-md-6 col-sm-12\" *ngFor=\"let card of homeContent.resourceCards\">\r\n                <div class=\"card-square\">\r\n                    <div class=\"img-wrapper inner-border-white\">\r\n                        <img class=\"image-square\" src=\"{{ card.cardImage[0].url }}\" alt=\"{{ card.cardImage[0].description }}\">\r\n                    </div>\r\n                    <div class=\"text-wrapper\">\r\n                        <h4>{{ card.resourceName}}</h4>\r\n                        <hr>\r\n                        <p>{{ card.resourceShortDescription }}</p>\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</section>\r\n";
 
 /***/ }),
 /* 134 */
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-light fixed-top\" id=\"mainNav\" *ngIf=\"navigationItems\">\r\n    <div class=\"container\">\r\n        <a class=\"navbar-brand js-scroll-trigger\" [routerLink]=\"['/home']\">Maley Digital Marketing</a>\r\n        <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarResponsive\" aria-controls=\"navbarResponsive\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n            Menu\r\n            <i class=\"fa fa-bars\"></i>\r\n        </button>\r\n        <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\">\r\n            <ul class=\"navbar-nav ml-auto\">\r\n                <li class=\"nav-item\" *ngFor=\"let item of navigationItems\">\r\n                    <a class=\"nav-link js-scroll-trigger\" routerLink=\"{{ item.linkUrl }}\">{{ item.text }}</a>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</nav>\r\n";
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-light fixed-top  {{ navClass }}\" id=\"mainNav\" *ngIf=\"navigationItems\">\r\n    <div class=\"container\">\r\n        <a class=\"navbar-brand js-scroll-trigger\" [routerLink]=\"['/home']\">Maley Digital Marketing</a>\r\n        <button class=\"navbar-toggler navbar-toggler-right\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarResponsive\" aria-controls=\"navbarResponsive\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n            Menu\r\n            <i class=\"fa fa-bars\"></i>\r\n        </button>\r\n        <div class=\"collapse navbar-collapse\" id=\"navbarResponsive\">\r\n            <ul class=\"navbar-nav ml-auto\">\r\n                <li class=\"nav-item\" *ngFor=\"let item of navigationItems\">\r\n                    <a class=\"nav-link js-scroll-trigger\" routerLink=\"{{ item.linkUrl }}\">{{ item.text }}</a>\r\n                </li>\r\n            </ul>\r\n        </div>\r\n    </div>\r\n</nav>\r\n";
 
 /***/ }),
 /* 135 */
