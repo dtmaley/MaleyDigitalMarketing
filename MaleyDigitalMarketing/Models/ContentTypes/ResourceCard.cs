@@ -10,18 +10,18 @@ using KenticoCloud.Delivery;
 
 namespace MDM.Models
 {
-    public partial class BlogCard
+    public partial class ResourceCard
     {
-        public const string Codename = "blog_card";
+        public const string Codename = "resource_card";
         public const string CardImageCodename = "card_image";
-        public const string BlogNameCodename = "blog_name";
-        public const string BlogShortDescriptionCodename = "blog_short_description";
-        public const string BlogLandingLinkCodename = "blog_landing_link";
+        public const string ResourceNameCodename = "resource_name";
+        public const string ResourceShortDescriptionCodename = "resource_short_description";
+        public const string ResourceLinkCodename = "resource_link";
 
         public IEnumerable<Asset> CardImage { get; set; }
-        public string BlogName { get; set; }
-        public string BlogShortDescription { get; set; }
-        public string BlogLandingLink { get; set; }
+        public string ResourceName { get; set; }
+        public string ResourceShortDescription { get; set; }
+        public string ResourceLink { get; set; }
         public ContentItemSystemAttributes System { get; set; }
     }
 }

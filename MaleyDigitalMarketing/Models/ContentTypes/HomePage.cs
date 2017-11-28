@@ -17,15 +17,15 @@ namespace MDM.Models
         public const string HeroSkill1Codename = "hero_skill_1";
         public const string HeroSkill2Codename = "hero_skill_2";
         public const string HeroSkill3Codename = "hero_skill_3";
-        public const string BlogSectionHeaderTextCodename = "blog_section_header_text";
-        public const string BlogCardsCodename = "blog_cards";
+        public const string ResourceSectionHeaderTextCodename = "resource_section_header_text";
+        public const string ResourceCardsCodename = "resource_cards";
 
         public IEnumerable<Asset> HeroImage { get; set; }
         public string HeroSkill1 { get; set; }
         public string HeroSkill2 { get; set; }
         public string HeroSkill3 { get; set; }
-        public string BlogSectionHeaderText { get; set; }
-        public IEnumerable<BlogCard> BlogCards { get; set; }
+        public string ResourceSectionHeaderText { get; set; }
+        public IEnumerable<object> ResourceCards { get; set; }
         public ContentItemSystemAttributes System { get; set; }
     }
 }

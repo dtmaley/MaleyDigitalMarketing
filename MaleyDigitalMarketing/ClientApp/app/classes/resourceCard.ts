@@ -1,11 +1,11 @@
 import { Asset } from "./asset";
 import { ContentItemSystemAttribute } from "./contentItemSystemAttribute";
 
-export class BlogCard {
+export class ResourceCard {
 
-    cardImage: Asset;
-    blogName: string;
-    blogShortDescription: string;
-    blogLandingLink: string;
+    resourceImage: Asset;
+    resourceName: string;
+    resourceShortDescription: string;
+    resourceLink: string;
     system: ContentItemSystemAttribute;
 }

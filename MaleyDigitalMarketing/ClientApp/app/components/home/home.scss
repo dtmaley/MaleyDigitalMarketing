@@ -5,16 +5,15 @@
     border: 6px solid #eee;
     background: #fff;
     min-height: 600px;
+    margin: 10px;
 
     .img-wrapper {
         box-sizing: border-box;
         display: block;
         position: relative;
         margin: auto;
-    }
-
-    .inner-border-white {
-        border-color: #fff;
+        outline: 1px solid white;
+        outline-offset: -5px;
     }
 
     .image-square {
@@ -32,7 +31,7 @@
         text-align: center;
         padding: 0 7.5px;
 
-        h3 {
+        h4 {
             margin: 20px;
         }
     }
